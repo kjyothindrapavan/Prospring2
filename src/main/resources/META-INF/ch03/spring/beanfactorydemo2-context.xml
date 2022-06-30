@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/util
+                http://www.springframework.org/schema/util/spring-util.xsd">
+                
+         <bean id ="encyclopedia" class="com.aspress.prospring2.ch03.di.ConfigurableEncyclopedia">
+         	<constructor-arg>
+         		<util:map map-class="java.util.HashMap" key-type="java.lang.String" value-type="java.lang.Long">
+         			<entry key="AgeOfUniverse" value="13700000000" />
+         			<entry key="ConstantOfLife" value="326190476" />
+         		</util:map>
+         	</constructor-arg>
+         </bean>
+         
+         <bean id="oracle" class="com.aspress.prospring2.ch03.di.BookWormOracle">
+         	<property name="encyclopedia" ref="encyclopedia"/>
+         </bean>
+         
+                <bean id="oracle1" class="com.aspress.prospring2.ch03.di.BookWormOracle">
+       		<property name="encyclopedia">
+       			<bean class="com.aspress.prospring2.ch03.di.HardcodedEncyclopedia"></bean>
+       		</property>
+       </bean>
+</beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+       <bean id='foo' class='com.aspress.prospring2.ch03.autowiring.Foo'/>
+       <bean id='bar' class='com.aspress.prospring2.ch03.autowiring.Bar'/>
+       
+       <bean id="byName" class='com.aspress.prospring2.ch03.autowiring.Target' autowire='byName'/>
+       <bean id="byType" class='com.aspress.prospring2.ch03.autowiring.Target' autowire='byType'/>
+       <bean id="constructor" class='com.aspress.prospring2.ch03.autowiring.Target' autowire='constructor'/>
+       <bean id="autodetect" class='com.aspress.prospring2.ch03.autowiring.Target' autowire="autodetect"/>
+</beans>

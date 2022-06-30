@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+                
+        <bean id="bfpp" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        	<property name="location" value="classpath:/META-INF/ch04/bfpp.properties"/>
+        </bean>
+        <bean id="simpleBean" class="com.aspress.prospring2.ch04.bfpp.SimpleBean">
+        	<property name="connectionString" value="${simpleBean.connectionString}"/>
+        	<property name="password" value="${simpleBean.password}"/>
+        	<property name="userName" value="username"/>
+        </bean>
+</beans>
